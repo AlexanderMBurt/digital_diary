@@ -25,29 +25,58 @@ function Display() {
     var Titles3 = JSON.parse(localStorage.getItem("1Titles"));
     var Bodies3 = JSON.parse(localStorage.getItem("2Bodies"));
 
-     if (Titles3.length > 4) {
+     if (Titles3.length !== 0) {
 
-        const Titles4 = Titles3.slice(0, 5);
-        const Bodies4 = Bodies3.slice(0, 5);
+        for (let x = 0; x < 5; x++){
+            const div = document.getElementById('example');
+            SavedCards.removeChild(div);
+        }
+        
+        if (Titles3.length > 4){ 
 
-        for (let x = 0; x < 5; x++) {
+            let y = 5;
 
-            const div = document.getElementById('example')
-            SavedCards.removeChild(div)
+            const Titles4 = Titles3.slice(0, y);
+            const Bodies4 = Bodies3.slice(0, y);
 
-            const div2 = document.createElement('div');
-            div2.classList = 'box';
+            for (let x = 0; x < y; x++) {
 
-            const h3_2 = document.createElement('h3');
-            h3_2.textContent = Titles4[x];
+                const div2 = document.createElement('div');
+                div2.classList = 'box';
 
-            const p2 = document.createElement('p');
-            p2.textContent = Bodies4[x];
+                const h3_2 = document.createElement('h3');
+                h3_2.textContent = Titles4[x];
 
-            SavedCards.appendChild(div2);
-            div2.appendChild(h3_2);
-            div2.appendChild(p2);
+                const p2 = document.createElement('p');
+                p2.textContent = Bodies4[x];
+
+                SavedCards.appendChild(div2);
+                div2.appendChild(h3_2);
+                div2.appendChild(p2);  
+            }
+        } else {
+
+            let  y = Titles3.length;
+
+            const Titles4 = Titles3.slice(0, y);
+            const Bodies4 = Bodies3.slice(0, y);
+
+            for (let x = 0; x < y; x++) {
+
+                const div2 = document.createElement('div');
+                div2.classList = 'box';
+
+                const h3_2 = document.createElement('h3');
+                h3_2.textContent = Titles4[x];
+
+                const p2 = document.createElement('p');
+                p2.textContent = Bodies4[x];
+
+                SavedCards.appendChild(div2);
+                div2.appendChild(h3_2);
+                div2.appendChild(p2);
             
+            }   
         }
     } 
 }
@@ -92,8 +121,12 @@ function CreateCard() {
                 div.appendChild(saveButton);
                 div.appendChild(h3);
                 div.appendChild(p);
-                
-                
+
+                document.getElementById("alert").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("alert").style.display = "none";
+                }, 5000);
+
             } else {
                 alert('Please enter a Title and Text.');
             }
