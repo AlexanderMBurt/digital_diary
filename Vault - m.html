@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    <head>
+        <title>Saved</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="Style - m.css">
+        <script src="Script.js"></script>
+    
+    </head>
+    <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const element = document.getElementById('grid3');
+                if (element !== null) {
+                    Save();
+                } else {
+                    console.error("SavedGrid not found");
+                }
+            });
+        </script>
+
+        <header id="Header">
+            <div id="light"></div>
+            <h1>Saved</h1>
+        </header>
+        
+        <a href="Vault - m.html"><img id="ProfilePicture" src="Profile Picture.png"></a>
+        
+        <nav id="nav-container">
+            <ul>
+                <li><a href="Index - m.html">Home</a></li>
+                <li><a href="New-Entry - m.html">Create New</a></li>
+                <li><p>Saved</p></li>
+            </ul>
+        </nav>
+
+        <article id="saved-cards">
+            <div id="grid3" class="grid"></div>
+        </article>
+
+        <footer id="Footer">
+            <div id="light"></div>
+            <h1>&#169; Website Company.ltd</h1>
+        </footer>
+        
+    </body>
+</html>
