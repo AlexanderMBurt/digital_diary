@@ -117,8 +117,8 @@ function CreateCard() {
                 };
 
                 cards.appendChild(div);
-                div.appendChild(removeButton);
                 div.appendChild(saveButton);
+                div.appendChild(removeButton);
                 div.appendChild(h3);
                 div.appendChild(p);
 
