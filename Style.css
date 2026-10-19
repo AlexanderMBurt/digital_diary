@@ -187,7 +187,7 @@ body {
 }
 
 #Footer {
-    bottom: 0;
+    bottom: 0px;
     border-top: solid rgb(200, 240, 255);
 }
 
@@ -223,7 +223,7 @@ body {
     box-shadow: 3px 3px 5px black;
 }
 
-@media only screen and (max-width: 800px) {
+@media (max-width: 800px) and (min-width: 375px) {
 
     #Header, #Footer {
         height: 45px;
@@ -360,6 +360,154 @@ body {
 
     .RemoveButton:hover{
         box-shadow: 1.5px 1.5px 1.5px black;
+    }
+    
+}
+
+@media (max-width: 375px) {
+
+    #Header, #Footer {
+        height: 45px;
+    }
+
+    #Header{
+        font-size: 20px;
+    }
+
+    #light {
+        height: 5px;
+    }
+
+    #ProfilePicture {
+        height: 45px;
+        width: 45px;
+        right: 0;
+    }
+
+    #nav-container {
+        top: 65px;
+        width: 100px;
+        height: 655px;
+    }
+
+    #nav-container li{
+        padding-bottom: 15%;
+    }
+
+    #nav-container a{
+        font-size: 19px;
+    }
+
+    #nav-container p {
+        font-size: 19px;
+    }
+
+    .grid {
+        margin-top: 65px;
+        left: 110px;
+        right: 250px;
+        column-gap: 250px;
+        row-gap: 20px;
+        padding-bottom: 15%;
+    }
+
+    .grid .box {
+        border-radius: 15px;
+        max-width: 190px;
+        min-width: 190px;
+        max-height: 200px;
+        min-height: 60px;
+        padding: 5px;
+    }
+
+    .grid .box h3{
+        font-size: 25px;
+        padding-top: 2.5px;
+    }
+
+    .grid .box p{
+        overflow-y: scroll;
+        max-height: 144px;
+        font-size: 17.5px;
+    }
+
+    .text input, textarea {
+        left: 110px;
+        top: 35px;
+    }
+
+    .text #title_in {
+        margin-top: 30px;
+        height: 75px;
+        font-size: 40px;
+    }
+
+    .text #main_in {
+        margin-top: 120px;
+        font-size: 20px; 
+    }
+
+    .card-container {
+        left: 110px;
+        margin-top: 650px;
+        right: 0;
+    }
+
+    .card-container h2 {
+        font-size: 25px;
+    }
+
+    .card-container .grid {
+        left: 0;
+        margin-top: 0;
+    }
+
+    #CreateButton {
+        left: 110px;
+        margin-top: 610px;
+        height: 37.5px;
+        width: 120px;
+        font-size: 25px;
+        box-shadow: 2.5px 2.5px 2.5px black;
+    }
+
+    #CreateButton:hover{
+        box-shadow: 1.5px 1.5px 1.5px black;
+    }
+
+    #alert {
+        box-shadow: 3.5px 3.5px 3.5px black;
+        margin-top: 610px;
+        margin-left: 240px;
+        height: 33px;
+        font-size: 8px;
+        margin-right: 0px;
+    }
+
+    .SaveButton{
+        height: 25px;
+        width: 100px;
+        font-size: 20px;
+        box-shadow: 2.5px 2.5px 2.5px black;
+    }
+
+    .SaveButton:hover{
+        box-shadow: 1.5px 1.5px 1.5px black;
+    }
+
+    .RemoveButton{    
+        height: 25px;
+        width: 100px;
+        font-size: 20px;
+        box-shadow: 2.5px 2.5px 2.5px black;
+    }
+
+    .RemoveButton:hover{
+        box-shadow: 1.5px 1.5px 1.5px black;
+    }
+
+    #Footer {
+        font-size: 15px;
     }
     
 }
