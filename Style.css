@@ -83,7 +83,7 @@ body {
     position: absolute;
     margin-top: 120px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
     left: 180px;
     right: 250px;
     column-gap: 250px;
@@ -94,12 +94,46 @@ body {
 .grid .box {
     border: solid rgb(255, 255, 255);
     border-radius: 15px;
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 380px;
+    min-width: 380px;
     max-height: 600px;
     min-height: 150px;
     padding: 5px;
     background-color: white;
+}
+
+#a {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    max-width: 1275px;
+    min-width: 1275px;
+    max-height: auto;
+    min-height: auto;
+
+}
+
+#b {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    max-width: 1275px;
+    min-width: 1275px;
+    max-height: auto;
+    min-height: auto;
+}
+
+#c {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#d {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#e {
+    grid-column: 1;
+    grid-row: 3; 
 }
 
 .grid .box h3{
@@ -148,6 +182,7 @@ body {
     text-decoration: underline;
     font-size: 30px;
 }
+
 .card-container .grid {
     left: 0;
     margin-top: 0;
@@ -265,7 +300,44 @@ body {
         column-gap: 250px;
         row-gap: 20px;
         padding-bottom: 15%;
+        grid-template-columns: repeat(auto-fit, minmax(50px, auto));
+
     }
+    
+    #a {
+
+        border-radius: 15px;
+        max-width: 250px;
+        min-width: 250px;
+        max-height: 325px;
+        min-height: 100px;
+        padding: 5px;
+    }
+
+    #b {
+
+        border-radius: 15px;
+        max-width: 250px;
+        min-width: 250px;
+        max-height: 325px;
+        min-height: 100px;
+        padding: 5px;
+    }
+
+    #c {
+        grid-column: 1;
+        grid-row: 3; 
+    } 
+
+    #d {
+        grid-column: 1;
+        grid-row: 4; 
+    } 
+
+    #e {
+        grid-column: 1;
+        grid-row: 5; 
+    }   
 
     .grid .box {
         border-radius: 15px;
@@ -409,6 +481,39 @@ body {
         column-gap: 250px;
         row-gap: 20px;
         padding-bottom: 15%;
+    }
+
+    #a {
+        border-radius: 15px;
+        max-width: 190px;
+        min-width: 190px;
+        max-height: 200px;
+        min-height: 60px;
+        padding: 5px;
+    }
+
+    #b {
+        border-radius: 15px;
+        max-width: 190px;
+        min-width: 190px;
+        max-height: 200px;
+        min-height: 60px;
+        padding: 5px;
+    }
+
+    #c {
+        grid-column: 1;
+        grid-row: 3; 
+    } 
+
+    #d {
+        grid-column: 1;
+        grid-row: 4; 
+    } 
+
+    #e {
+        grid-column: 1;
+        grid-row: 5; 
     }
 
     .grid .box {
