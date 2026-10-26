@@ -39,10 +39,13 @@ function Display() {
             const Titles4 = Titles3.slice(0, y);
             const Bodies4 = Bodies3.slice(0, y);
 
+            const ids = ['a','b','c','d','e']
+
             for (let x = 0; x < y; x++) {
 
                 const div2 = document.createElement('div');
                 div2.classList = 'box';
+                div2.id = ids[x];
 
                 const h3_2 = document.createElement('h3');
                 h3_2.textContent = Titles4[x];
@@ -61,10 +64,13 @@ function Display() {
             const Titles4 = Titles3.slice(0, y);
             const Bodies4 = Bodies3.slice(0, y);
 
+            const ids = ['a','b','c','d','e']
+
             for (let x = 0; x < y; x++) {
 
                 const div2 = document.createElement('div');
                 div2.classList = 'box';
+                div2.id = ids[x];
 
                 const h3_2 = document.createElement('h3');
                 h3_2.textContent = Titles4[x];
