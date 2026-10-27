@@ -1,654 +1,188 @@
-* {
-    margin: 0;
-    padding: 0%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+let Titles = [];
+let Bodies = [];
+
+//stops existing data from being saved as one item in local storage
+window.onload = () => {
+
+var Titles2 = JSON.parse(localStorage.getItem("1Titles"));
+var Bodies2 = JSON.parse(localStorage.getItem("2Bodies"));
+
+if (Titles2 !== null || Bodies2 !== null) {
+
+for (let i = 0; i < Titles2.length; i++) {
+    Titles.push(Titles2[i]);
+    Bodies.push(Bodies2[i]);
+        }
+    }
 }
 
-body {
-    background-color: rgb(225, 225, 225);
-}
+//displays recent items on the index page
+function Display() {
 
-#Header, #Footer {
-    left: 0%;
-    right: 0%;
-    height: 70px;
-    font-size: 30px;
-    border-bottom: solid rgb(0, 0, 255);
-    background-image: linear-gradient(to bottom, rgb(152, 217, 255), rgb(0, 0, 148));
-    color: white;
-    box-shadow: 0px 5px 5px black;
-    position: fixed;
-    z-index: 1;
-}
+    const SavedCards = document.getElementById('grid1');
+    const div = document.getElementById('example')
 
-#light {
-    left: 0%;
-    right: 0%;
-    height: 15px;
-    background-color: rgba(255, 255, 255, 0.8);
-    opacity: 0.5;
-    position: absolute;
-}
+    var Titles3 = JSON.parse(localStorage.getItem("1Titles"));
+    var Bodies3 = JSON.parse(localStorage.getItem("2Bodies"));
 
-#ProfilePicture {
-    position: fixed;
-    z-index: 2;
-    height: 65px;
-    width: 65px;
-    border: solid black;
-    border-radius: 50%;
-    right: 0;
-}
+     if (Titles3.length !== 0) {
 
-#nav-container {
-    position: fixed;
-    top: 100px;
-    left: 0%;
-    width: 150px;
-    height: 680px;
-    background-image: linear-gradient(to bottom, rgb(152, 217, 255), rgb(0, 0, 148));
-    border: solid rgb(0, 0, 0);
-}
+        for (let x = 0; x < 5; x++){
+            const div = document.getElementById('example');
+            SavedCards.removeChild(div);
+        }
+        
+        if (Titles3.length > 4){ 
 
-#nav-container li{
-    padding-bottom: 15%;
-}
+            let y = 5;
 
-#nav-container li :hover{
-    transition: 0.3s;
-    color: white;
-    background-color: black;
-}
+            const Titles4 = Titles3.slice(0, y);
+            const Bodies4 = Bodies3.slice(0, y);
 
-#nav-container a{
-    text-decoration: none;
-    color: black;
-    font-size: 22px;
-    position: absolute;
-    width: 100%;
-    height: 5%;
-}
+            const classes = ['a','b','c','d','e']
 
-#nav-container p {
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    font-size: 22px;
-    position: absolute;
-    width: 100%;
-    height: 5%;
-}
+            for (let x = 0; x < y; x++) {
 
-.grid {
-    position: absolute;
-    margin-top: 120px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-    left: 180px;
-    right: 250px;
-    column-gap: 250px;
-    row-gap: 20px;
-    padding-bottom: 5%;
-}
+                const div2 = document.createElement('div');
+                div2.classList = classes[x];
+                div2.id = 'box';
 
-#box {
-    border: solid rgb(255, 255, 255);
-    border-radius: 15px;
-    width: 380px;
-    max-height: 600px;
-    min-height: 150px;
-    padding: 5px;
-    background-color: white;
-}
+                const h3_2 = document.createElement('h3');
+                h3_2.textContent = Titles4[x];
 
-.a {
-    grid-column: 1 ;
-    grid-row: 1;
-    max-width: 1275px;
-    min-width: 1275px;
-    max-height: auto;
-    min-height: auto;
-}
+                const p2 = document.createElement('p');
+                p2.textContent = Bodies4[x];
 
-.a #box{
-    max-width: 1275px;
-    min-width: 1275px;
-    max-height: auto;
-    min-height: auto;
+                SavedCards.appendChild(div2);
+                div2.appendChild(h3_2);
+                div2.appendChild(p2);  
+            }
+        } else {
 
-}
+            let  y = Titles3.length;
 
-.b {
-    grid-column: 1;
-    grid-row: 2;
-    max-width: 1275px;
-    min-width: 1275px;
-    max-height: auto;
-    min-height: auto;
-}
+            const Titles4 = Titles3.slice(0, y);
+            const Bodies4 = Bodies3.slice(0, y);
 
-.b #box {
-    max-width: 1275px;
-    min-width: 1275px;
-    max-height: auto;
-    min-height: auto;
-}
+            const classes = ['a','b','c','d','e']
 
-.c {
-    grid-column: 1;
-    grid-row: 3;
-}
+            for (let x = 0; x < y; x++) {
 
-.d {
-    grid-column: 2;
-    grid-row: 3;
-}
+                const div2 = document.createElement('div');
+                div2.classList = classes[x];
+                div2.id = 'box';
 
-.e {
-    grid-column: 3;
-    grid-row: 3; 
-}
+                const h3_2 = document.createElement('h3');
+                h3_2.textContent = Titles4[x];
 
-.grid #box h3{
-    font-size: 30px;
-    text-decoration: underline;
-    padding-top: 5px;
-}
+                const p2 = document.createElement('p');
+                p2.textContent = Bodies4[x];
 
-.grid #box p{
-    overflow-y: scroll;
-    max-height: 470px;
-}
-
-.grid #box:hover {
-    transition: 0.15s;
-    padding: 3.5px;
-}
-
-.text input, textarea {
-    position: absolute;
-    left: 180px;
-    right: 20px;
-    top: 70px;
-    padding: 2px;
-}
-
-.text #title_in {
-    margin-top: 30px;
-    height: 100px;
-    font-size: 50px;
-}
-
-.text #main_in {
-    margin-top: 150px;
-    font-size: 20px; 
-}
-
-.card-container {
-    position: absolute;
-    left: 180px;
-    margin-top: 735px;
-    right: 0;
-}
-
-.card-container h2 {
-    text-decoration: underline;
-    font-size: 30px;
-}
-
-.card-container .grid {
-    left: 0;
-    margin-top: 0;
-}
-
-#CreateButton {
-    position: absolute;
-    left: 180px;
-    margin-top: 675px;
-    height: 50px;
-    width: 200px;
-    font-size: 30px;
-    background-image: linear-gradient(to bottom, rgb(0, 135, 220), rgb(0, 100, 165));
-    background-position: center;
-    box-shadow: 5px 5px 5px black;
-    transition: 0.2s;
-}
-
-#CreateButton:hover{
-    cursor: pointer;
-    background-image: linear-gradient(to bottom, rgb(0, 165, 250), rgb(0, 130, 195));
-    box-shadow: 3px 3px 5px black;
-}
-
-#alert {
-    display: none;
-    position: absolute;
-    background-image: linear-gradient(to bottom, rgb(0, 135, 220), rgb(0, 100, 165));
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border: solid grey;
-    box-shadow: 5px 5px 5px black;
-    margin-top: 675px;
-    margin-left: 400px;
-    height: 45px;
-    
-}
-
-#Footer {
-    bottom: 0px;
-    border-top: solid rgb(200, 240, 255);
-}
-
-.SaveButton{
-    height: 25px;
-    width: 100px;
-    font-size: 20px;
-    background-image: linear-gradient(to bottom, rgb(30, 135, 0), rgb(20, 90, 0));
-    background-position: center;
-    box-shadow: 5px 5px 5px black;
-    transition: 0.2s;
-}
-
-.SaveButton:hover{
-    cursor: pointer;
-    background-image: linear-gradient(to bottom, rgb(70, 175, 0), rgb(60, 130, 0));
-    box-shadow: 3px 3px 5px black;
-}
-
-.RemoveButton{    
-    height: 25px;
-    width: 100px;
-    font-size: 20px;
-    background-image: linear-gradient(to bottom, rgb(200, 0, 0), rgb(170, 0, 0));
-    background-position: center;
-    box-shadow: 5px 5px 5px black;
-    transition: 0.2s;
-}
-
-.RemoveButton:hover{
-    cursor: pointer;
-    background-image: linear-gradient(to bottom, rgb(240, 0, 0), rgb(210, 0, 0));
-    box-shadow: 3px 3px 5px black;
-}
-
-@media (max-width: 800px) and (min-width: 425px) {
-
-    #Header, #Footer {
-        height: 45px;
-        font-size: 20px;
-    }
-
-    #light {
-        height: 5px;
-    }
-
-    #ProfilePicture {
-        height: 45px;
-        width: 45px;
-        right: 0;
-    }
-
-    #nav-container {
-        top: 65px;
-        width: 125px;
-        height: 655px;
-    }
-
-    #nav-container li{
-        padding-bottom: 15%;
-    }
-
-    #nav-container a{
-        font-size: 24px;
-    }
-
-    #nav-container p {
-        font-size: 24px;
-    }
-
-    .grid {
-        margin-top: 65px;
-        left: 145px;
-        right: 250px;
-        column-gap: 250px;
-        row-gap: 20px;
-        padding-bottom: 15%;
-        grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-
-    }
-
-    #box {
-        border-radius: 15px;
-        width: 250px;
-        max-height: 325px;
-        min-height: 100px;
-        padding: 5px;
-    }
-
-    
-    .a {
-        grid-column: 1 ;
-        grid-row: 1;
-        min-width: 560px;
-        max-width: 560px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .a #box{
-        min-width: 560px;
-        max-height: auto;
-        min-height: auto;
-
-    }
-
-    .b {
-        grid-column: 1 ;
-        grid-row: 2;
-        min-width: 560px;
-        max-width: 560px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .b #box {
-        min-width: 560px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .c {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .d {
-        grid-column: 2;
-        grid-row: 3;
-    }
-
-    .e {
-        grid-column: 1;
-        grid-row: 4; 
-    }
-
-    .grid #box h3{
-        font-size: 25px;
-        padding-top: 2.5px;
-    }
-
-    .grid #box p{
-        overflow-y: scroll;
-        max-height: 224px;
-        font-size: 17.5px;
-    }
-
-    .text input, textarea {
-        left: 140px;
-        top: 35px;
-    }
-
-    .text #title_in {
-        margin-top: 30px;
-        height: 75px;
-        font-size: 40px;
-    }
-
-    .text #main_in {
-        margin-top: 120px;
-        font-size: 20px; 
-    }
-
-    .card-container {
-        left: 140px;
-        margin-top: 650px;
-        right: 0;
-    }
-
-    .card-container h2 {
-        font-size: 25px;
-    }
-
-    .card-container .grid {
-        left: 0;
-        margin-top: 0;
-    }
-
-    #CreateButton {
-        left: 140px;
-        margin-top: 610px;
-        height: 37.5px;
-        width: 120px;
-        font-size: 25px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    #CreateButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-
-    #alert {
-        box-shadow: 3.5px 3.5px 3.5px black;
-        margin-top: 610px;
-        margin-left: 270px;
-        height: 33px;
-        font-size: 8px;
-        margin-right: 0px;
-    }
-
-    .SaveButton{
-        height: 25px;
-        width: 100px;
-        font-size: 20px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    .SaveButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-
-    .RemoveButton{    
-        height: 25px;
-        width: 100px;
-        font-size: 20px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    .RemoveButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-    
-}
-
-@media (max-width: 425px) and (min-width: 320px) {
-
-    #Header, #Footer {
-        height: 45px;
-    }
-
-    #Header{
-        font-size: 20px;
-    }
-
-    #light {
-        height: 5px;
-    }
-
-    #ProfilePicture {
-        height: 45px;
-        width: 45px;
-        right: 0;
-    }
-
-    #nav-container {
-        top: 65px;
-        width: 100px;
-        height: 655px;
-    }
-
-    #nav-container li{
-        padding-bottom: 15%;
-    }
-
-    #nav-container a{
-        font-size: 19px;
-    }
-
-    #nav-container p {
-        font-size: 19px;
-    }
-
-    .grid {
-        margin-top: 65px;
-        left: 110px;
-        right: 250px;
-        column-gap: 250px;
-        row-gap: 20px;
-        padding-bottom: 15%;
-    }
-
-    .grid #box {
-        border-radius: 15px;
-        width: 190px;
-        max-height: 200px;
-        min-height: 60px;
-        padding: 5px;
-    }
-
-    .a {
-        grid-column: 1 ;
-        grid-row: 1;
-        min-width: 190px;
-        max-width: 190px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .a #box{
-        min-width: 190px;
-        max-height: auto;
-        min-height: auto;
-
-    }
-
-    .b {
-        grid-column: 1 ;
-        grid-row: 2;
-        min-width: 190px;
-        max-width: 190px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .b #box {
-        min-width: 190px;
-        max-height: auto;
-        min-height: auto;
-    }
-
-    .c {
-        grid-column: 1;
-        grid-row: 3; 
+                SavedCards.appendChild(div2);
+                div2.appendChild(h3_2);
+                div2.appendChild(p2);
+            
+            }   
+        }
     } 
+}
 
-    .d {
-        grid-column: 1;
-        grid-row: 4; 
-    } 
+//displays cards below the text input so they can be saved to local storage
+function CreateCard() {
+       
+            const title = document.getElementById('title_in').value;
+            const main = document.getElementById('main_in').value;
+            
+            if (title !== '' && main !== '') {
 
-    .e {
-        grid-column: 1;
-        grid-row: 5; 
+                const cards = document.getElementById('grid2');
+
+                const div = document.createElement('div');
+                div.id = 'box';
+
+                const h3 = document.createElement('h3');
+                h3.textContent = title;
+
+                const p = document.createElement('p');
+                p.textContent = main;
+
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.classList.add('RemoveButton');
+                removeButton.onclick = () => cards.removeChild(div);
+
+                const saveButton = document.createElement('button');
+                saveButton.textContent = 'Save';
+                saveButton.classList.add('SaveButton');
+
+                saveButton.onclick = () => {
+                Titles.unshift(h3.textContent);
+                Bodies.unshift(p.textContent);
+                localStorage.setItem("1Titles", JSON.stringify(Titles));
+                localStorage.setItem("2Bodies", JSON.stringify(Bodies));
+                };
+
+                cards.appendChild(div);
+                div.appendChild(saveButton);
+                div.appendChild(removeButton);
+                div.appendChild(h3);
+                div.appendChild(p);
+
+                document.getElementById("alert").style.display = "block";
+                setTimeout(() => {
+                    document.getElementById("alert").style.display = "none";
+                }, 5000);
+
+            } else {
+                alert('Please enter a Title and Text.');
+            }
+        }
+
+//displays all local storage items as cards 
+function Save() {
+
+    const SavedCards = document.getElementById('grid3');
+
+    var Titles3 = JSON.parse(localStorage.getItem("1Titles"));
+    var Bodies3 = JSON.parse(localStorage.getItem("2Bodies"));
+
+    if (Titles3 === null || Bodies3 === null || Titles3.length === 0 || Bodies3.length === 0) {
+        alert('Nothing Saved');   
+    } else  {
+        for (let x = 0; x < Titles3.length; x++) {
+
+            const div2 = document.createElement('div');
+            div2.id = 'box';
+
+            const h3_2 = document.createElement('h3');
+            h3_2.textContent = Titles3[x];
+
+            const p2 = document.createElement('p');
+            p2.textContent = Bodies3[x];
+
+            const value = Titles3[x];
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.classList.add('RemoveButton');
+            removeButton.onclick = () => {
+                
+                SavedCards.removeChild(div2);
+
+                const index = Titles3.indexOf(value)
+                
+                if (index !== -1) {
+                    Titles3.splice(index, 1);
+                    Bodies3.splice(index, 1);
+                }
+                localStorage.setItem("1Titles", JSON.stringify(Titles3));
+                localStorage.setItem("2Bodies", JSON.stringify(Bodies3));
+            }
+
+            SavedCards.appendChild(div2);
+            div2.appendChild(removeButton);
+            div2.appendChild(h3_2);
+            div2.appendChild(p2);
+        }
     }
-
-    .grid .box h3{
-        font-size: 25px;
-        padding-top: 2.5px;
-    }
-
-    .grid .box p{
-        overflow-y: scroll;
-        max-height: 144px;
-        font-size: 17.5px;
-    }
-
-    .text input, textarea {
-        left: 110px;
-        top: 35px;
-    }
-
-    .text #title_in {
-        margin-top: 30px;
-        height: 75px;
-        font-size: 40px;
-    }
-
-    .text #main_in {
-        margin-top: 120px;
-        font-size: 20px; 
-    }
-
-    .card-container {
-        left: 110px;
-        margin-top: 650px;
-        right: 0;
-    }
-
-    .card-container h2 {
-        font-size: 25px;
-    }
-
-    .card-container .grid {
-        left: 0;
-        margin-top: 0;
-    }
-
-    #CreateButton {
-        left: 110px;
-        margin-top: 610px;
-        height: 37.5px;
-        width: 120px;
-        font-size: 25px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    #CreateButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-
-    #alert {
-        box-shadow: 3.5px 3.5px 3.5px black;
-        margin-top: 610px;
-        margin-left: 240px;
-        height: 33px;
-        font-size: 8px;
-        margin-right: 0px;
-    }
-
-    .SaveButton{
-        height: 25px;
-        width: 100px;
-        font-size: 20px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    .SaveButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-
-    .RemoveButton{    
-        height: 25px;
-        width: 100px;
-        font-size: 20px;
-        box-shadow: 2.5px 2.5px 2.5px black;
-    }
-
-    .RemoveButton:hover{
-        box-shadow: 1.5px 1.5px 1.5px black;
-    }
-
-    #Footer {
-        font-size: 15px;
-    }
-    
 }
