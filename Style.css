@@ -111,11 +111,9 @@ body {
 }
 
 .a #box{
-    max-width: 1275px;
-    min-width: 1275px;
+    width: 100%;
     max-height: auto;
     min-height: auto;
-
 }
 
 .b {
@@ -128,8 +126,7 @@ body {
 }
 
 .b #box {
-    max-width: 1275px;
-    min-width: 1275px;
+    width: 100%;
     max-height: auto;
     min-height: auto;
 }
@@ -336,7 +333,7 @@ body {
     }
 
     .a #box{
-        min-width: 560px;
+        width: 100%;
         max-height: auto;
         min-height: auto;
 
@@ -352,7 +349,7 @@ body {
     }
 
     .b #box {
-        min-width: 560px;
+        width: 100%;
         max-height: auto;
         min-height: auto;
     }
@@ -525,7 +522,7 @@ body {
     }
 
     .a #box{
-        min-width: 190px;
+        width: 100%;
         max-height: auto;
         min-height: auto;
 
@@ -541,7 +538,7 @@ body {
     }
 
     .b #box {
-        min-width: 190px;
+        width: 100%;
         max-height: auto;
         min-height: auto;
     }
