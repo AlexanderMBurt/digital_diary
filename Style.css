@@ -42,41 +42,49 @@ body {
 
 #nav-container {
     position: fixed;
-    top: 100px;
-    left: 0%;
-    width: 150px;
-    height: 680px;
-    background-image: linear-gradient(to bottom, rgb(152, 217, 255), rgb(0, 0, 148));
-    border: solid rgb(0, 0, 0);
+    top: 1.7%;
+    left: 300px;
+    z-index: 2;
+    width: 800px;
+    height: 400px;
+    padding-left: 2%;
 }
 
-#nav-container li{
-    padding-bottom: 15%;
+#nav-container ul {
+    list-style-type: none;
 }
 
-#nav-container li :hover{
+#nav-container li {
+    width: 120px;
+    float: left;
+    padding-right: 5px;
+}
+
+#nav-container li :hover {
     transition: 0.3s;
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
 }
 
-#nav-container a{
+#nav-container a {
     text-decoration: none;
-    color: black;
+    color: rgb(40, 40, 40);
     font-size: 22px;
-    position: absolute;
-    width: 100%;
     height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #nav-container p {
     text-decoration: none;
-    color: white;
-    background-color: black;
+    color: rgb(0, 0, 0);
     font-size: 22px;
-    position: absolute;
-    width: 100%;
     height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
 }
 
 .grid {
@@ -84,11 +92,10 @@ body {
     margin-top: 120px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-    left: 180px;
+    left: 20px;
     right: 250px;
     column-gap: 250px;
-    row-gap: 20px;
-    padding-bottom: 5%;
+    grid-row-gap: 20px;
 }
 
 #box {
@@ -102,47 +109,66 @@ body {
 }
 
 .a {
-    grid-column: 1 ;
+    grid-column: 1;
     grid-row: 1;
-    max-width: 1275px;
-    min-width: 1275px;
+    max-width: 880px;
+    min-width: 880px;
     max-height: 600px;
     min-height: 150px;
 }
 
-.a #box{
+.a #box {
     width: 100%;
     height: 100%;
 }
 
 .b {
-    grid-column: 1;
-    grid-row: 2;
-    max-width: 1275px;
-    min-width: 1275px;
-    max-height: 600px;
-    min-height: 150px;
+    grid-column: 3;
+    grid-row: 1;
 }
 
 .b #box {
-    width: 100%;
     height: 100%;
 }
 
 .c {
     grid-column: 1;
     grid-row: 3;
+    max-width: 1380px;
+    min-width: 1380px;
+    max-height: 600px;
+    min-height: 150px;
+}
+
+.c #box {
+    width: 100%;
+    height: 100%;
 }
 
 .d {
-    grid-column: 2;
-    grid-row: 3;
+    grid-column: 1;
+    grid-row: 4;
+    
+}
+
+.d #box {
+    height: 100%;
 }
 
 .e {
-    grid-column: 3;
-    grid-row: 3; 
+    grid-column: 2;
+    grid-row: 4;
+    max-width: 880px;
+    min-width: 880px;
+    max-height: 600px;
+    min-height: 150px; 
 }
+
+.e #box {
+    width: 100%;
+    height: 100%;
+}
+
 
 .grid #box h3{
     font-size: 30px;
@@ -162,7 +188,7 @@ body {
 
 .text input, textarea {
     position: absolute;
-    left: 180px;
+    left: 20px;
     right: 20px;
     top: 70px;
     padding: 2px;
@@ -181,7 +207,7 @@ body {
 
 .card-container {
     position: absolute;
-    left: 180px;
+    left: 20px;
     margin-top: 735px;
     right: 0;
 }
@@ -198,7 +224,7 @@ body {
 
 #CreateButton {
     position: absolute;
-    left: 180px;
+    left: 20px;
     margin-top: 675px;
     height: 50px;
     width: 200px;
@@ -224,7 +250,7 @@ body {
     border: solid grey;
     box-shadow: 5px 5px 5px black;
     margin-top: 675px;
-    margin-left: 400px;
+    margin-left: 250px;
     height: 45px;
     
 }
@@ -284,13 +310,13 @@ body {
     }
 
     #nav-container {
-        top: 65px;
-        width: 125px;
-        height: 655px;
+        top: 0;
+        left: 200px;
     }
 
     #nav-container li{
         padding-bottom: 15%;
+        width: 125px;
     }
 
     #nav-container a{
@@ -303,13 +329,12 @@ body {
 
     .grid {
         margin-top: 65px;
-        left: 145px;
-        right: 250px;
-        column-gap: 250px;
+        left: 30px;
+        right: 50px;
+        column-gap: 30px;
         row-gap: 20px;
         padding-bottom: 15%;
-        grid-template-columns: repeat(auto-fit, minmax(50px, auto));
-
+        grid-template-columns: repeat(auto-fit, minmax(210px, auto));
     }
 
     #box {
@@ -320,12 +345,9 @@ body {
         padding: 5px;
     }
 
-    
     .a {
-        grid-column: 1 ;
-        grid-row: 1;
-        min-width: 560px;
-        max-width: 560px;
+        min-width: 440px;
+        max-width: 440px;
         max-height: 325px;
         min-height: 100px;
     }
@@ -336,10 +358,8 @@ body {
     }
 
     .b {
-        grid-column: 1 ;
-        grid-row: 2;
-        min-width: 560px;
-        max-width: 560px;
+        min-width: 200px;
+        max-width: 200px;
         max-height: 325px;
         min-height: 100px;
     }
@@ -350,18 +370,29 @@ body {
     }
 
     .c {
-        grid-column: 1;
-        grid-row: 3;
+        min-width: 690px;
+        max-width: 690px;
+        max-height: 325px;
+        min-height: 100px;
     }
 
     .d {
-        grid-column: 2;
-        grid-row: 3;
+        min-width: 200px;
+        max-width: 200px;
+        max-height: 325px;
+        min-height: 100px;
+    }
+
+    .d #box {
+        width: 100%;
+        max-height: 100%;
     }
 
     .e {
-        grid-column: 1;
-        grid-row: 4; 
+        min-width: 440px;
+        max-width: 440px;
+        max-height: 325px;
+        min-height: 100px;
     }
 
     .grid #box h3{
@@ -376,7 +407,7 @@ body {
     }
 
     .text input, textarea {
-        left: 140px;
+        left: 30px;
         top: 35px;
     }
 
@@ -392,7 +423,7 @@ body {
     }
 
     .card-container {
-        left: 140px;
+        left: 30px;
         margin-top: 650px;
         right: 0;
     }
@@ -407,7 +438,7 @@ body {
     }
 
     #CreateButton {
-        left: 140px;
+        left: 30px;
         margin-top: 610px;
         height: 37.5px;
         width: 120px;
@@ -455,11 +486,19 @@ body {
 @media (max-width: 425px) and (min-width: 320px) {
 
     #Header, #Footer {
-        height: 45px;
+        height: 55px;
     }
 
     #Header{
         font-size: 20px;
+    }
+
+    #Header{
+        font-size: 20px;
+    }
+
+    #Header h1{
+        padding-top: 15px;
     }
 
     #light {
@@ -467,19 +506,27 @@ body {
     }
 
     #ProfilePicture {
-        height: 45px;
-        width: 45px;
+        height: 40px;
+        width: 40px;
         right: 0;
+        top: 15px;
     }
 
     #nav-container {
-        top: 65px;
+        top: 0px;
         width: 100px;
         height: 655px;
+        left: 0px;
     }
 
+    #nav-container ul {
+        width: 350px;
+        height: 100px;  
+    }
+    
     #nav-container li{
-        padding-bottom: 15%;
+        width: 100px;
+        padding-right: 0;
     }
 
     #nav-container a{
@@ -491,12 +538,12 @@ body {
     }
 
     .grid {
-        margin-top: 65px;
-        left: 110px;
+        margin-top: 70px;
+        left: 20px;
         right: 250px;
         column-gap: 250px;
         row-gap: 20px;
-        padding-bottom: 15%;
+        padding-bottom: 20%;
     }
 
     .grid #box {
@@ -510,23 +557,19 @@ body {
     .a {
         grid-column: 1 ;
         grid-row: 1;
-        min-width: 190px;
         max-width: 190px;
-        max-height: 200px;
-        min-height: 60px;
+        min-width: 190px;
     }
 
     .a #box{
         width: 100%;
         height: 100%;
-
     }
 
     .b {
         grid-column: 1 ;
         grid-row: 2;
-        min-width: 190px;
-        max-width: 190px;
+        width: 190px;
         max-height: 200px;
         min-height: 60px;
     }
@@ -538,7 +581,9 @@ body {
 
     .c {
         grid-column: 1;
-        grid-row: 3; 
+        grid-row: 3;
+        max-width: 190px;
+        min-width: 190px; 
     } 
 
     .d {
@@ -548,7 +593,9 @@ body {
 
     .e {
         grid-column: 1;
-        grid-row: 5; 
+        grid-row: 5;
+        max-width: 190px;
+        min-width: 190px; 
     }
 
     .grid .box h3{
@@ -563,7 +610,7 @@ body {
     }
 
     .text input, textarea {
-        left: 110px;
+        left: 20px;
         top: 35px;
     }
 
@@ -579,7 +626,7 @@ body {
     }
 
     .card-container {
-        left: 110px;
+        left: 20px;
         margin-top: 650px;
         right: 0;
     }
@@ -594,7 +641,7 @@ body {
     }
 
     #CreateButton {
-        left: 110px;
+        left: 20px;
         margin-top: 610px;
         height: 37.5px;
         width: 120px;
@@ -609,7 +656,7 @@ body {
     #alert {
         box-shadow: 3.5px 3.5px 3.5px black;
         margin-top: 610px;
-        margin-left: 240px;
+        margin-left: 145px;
         height: 33px;
         font-size: 8px;
         margin-right: 0px;
